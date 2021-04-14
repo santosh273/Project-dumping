@@ -1,0 +1,75 @@
+.icon
+{
+    font-size: 32px;
+    color:rgb(204, 238, 9);
+    margin: 0px 10px;
+}
+
+.brand
+{
+    font-family: 'Knewave', cursive;
+    font-size: 32px;
+    color:rgb(204, 238, 9);
+}
+
+.toggleicon
+{
+    font-size: 30px;
+    color:white;
+   
+}
+
+.nav-link
+{
+    font-family: 'Pacifico', cursive;
+    font-size: 18px;
+    color:white;
+    margin: 0px 10px;
+}
+
+.nav-link:hover
+{
+    color: rgb(138, 243, 138);
+}
+
+.userlink
+{
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    font-size: 28px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.usericon
+{
+    font-size: 32px;
+}
+
+.dropdown-menu
+{
+    
+    font-family: 'Dancing Script', cursive;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    width: 10%;
+}
+
+.btn
+{
+    color: white;
+    background-color: rgb(21, 182, 21);
+    font-size: 24px;
+}
+
+.dropdown-item
+{
+    margin: auto;
+    margin-left: 5px;
+    width: 120px;
+}
+
+
+
+

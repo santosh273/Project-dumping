@@ -1,0 +1,38 @@
+<div style="min-height:800px; display: flex; align-items: center;">
+
+        <div class="row w-100" style="display: flex;justify-content: center; margin: 0;">
+            
+            <div class="col-md-0 col-lg-3 col-xl-3 col-xxl-2" style="margin: 0px; padding: 0;">
+                <div style="padding: 0; height: 390px;" class="sdiv1">
+                    <img src="./assets/divimg2.jpg" width="100%" height="100%">
+                </div> 
+            </div>
+
+            <div class="col-10 col-sm-8 col-md-3 col-lg-2 col-xl-2 col-xxl-1" style="margin: 0px; padding: 0;">
+                <div style="padding: 0;" class="sdiv2">
+                    <div class="formbtn" routerLink="login" routerLinkActive="active">
+                        <div>
+                            <p><fa-icon [icon]="faUserTie"></fa-icon></p>
+                            <p>Login</p>
+                        </div>
+                    </div>
+                    <div class="formbtn" routerLink="register" routerLinkActive="active">
+                        <div>
+                            <p><fa-icon [icon]="faUserPlus"></fa-icon></p>
+                            <p>Register</p>
+                        </div> 
+                    </div>
+                    <div class="formbtn" routerLink="forgotpwd" routerLinkActive="active">
+                        <div>
+                            <p><fa-icon [icon]="faLock"></fa-icon></p>
+                            <p>Forgot Password?</p>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+                
+            <div class="col-11 col-sm-10 col-md-7 col-lg-6 col-xl-5 col-xxl-4 sdiv3" style="padding: 0;">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+</div>

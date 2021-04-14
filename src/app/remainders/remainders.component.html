@@ -1,0 +1,107 @@
+<div class="container" style="position: relative;">
+    <div class="searchbox">
+        <input class="searchinp" type="text" name="search" id="search" placeholder="Search Here" autocomplete="off" [(ngModel)]="searchTerm">
+        <span class="searchicon"><fa-icon [icon]="faSearch"></fa-icon></span>
+    </div>
+    <div class="row mt-4 mb-4">
+        <div class="col-sm-12 col-md-8 col-lg-6 mx-auto">   
+            <button class="btn w-100 splbtn" (click)="transform()" id="t1">Add Notes</button>
+            <div class="splform" id="t2">
+                <div class="inp">
+                    <span><fa-icon [icon]="faPencilAlt"></fa-icon></span>
+                    <input type="text" id="title1" name="title" placeholder="Title" [(ngModel)]="addactivityObj.title" #r1="ngModel" required autocomplete="off">
+                    <span *ngIf="r1.touched && r1.errors?.required">
+                        <span class="text-danger err">Provide a title</span>
+                    </span>
+                </div>
+                <div class="inp">
+                    <span><fa-icon [icon]="faStickyNote"></fa-icon></span>
+                    <input type="text" id="activity1" name="activity" placeholder="Activity" [(ngModel)]="addactivityObj.activity" #r2="ngModel" required autocomplete="off">
+                    <span *ngIf="r2.touched && r2.invalid">
+                        <span class="text-danger err">Provide description</span>
+                    </span> 
+                </div>
+                <div class="remindDisplay" style="margin: 10px 20px;" *ngIf="addactivityObj.time"><fa-icon [icon]="faClock" style="margin-right: 8px;"></fa-icon><span>{{addactivityObj.time | amDateFormat:'llll'}}</span></div>
+                <div class="mt-3 mb-3 show1">
+                    <a class="btn sbtn" (click)="remindModal()" data-bs-toggle="modal" data-bs-target="#remindModal"><span class="vanish">Remind</span><fa-icon [icon]="faStopwatch" class="icon"></fa-icon></a>
+                    <a class="btn sbtn" (click)="add()"><span class="vanish">Add</span><fa-icon [icon]="faPlus"  class="icon"></fa-icon></a>
+                    <a class="btn sbtn" (click)="close()"><span class="vanish">Close</span><fa-icon [icon]="faTimes" class="icon"></fa-icon></a>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <div class="row displaycards">
+        <div class="col-md-6 col-lg-4 mt-3 mb-5" *ngFor="let activity of activities | search : searchTerm">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="m-2">{{activity.title}}</h5>
+                    <p class="m-2">{{activity.activity}}</p>
+                    <div class="remindDisplay" *ngIf="activity.time"><fa-icon [icon]="faClock" style="margin-right: 8px;"></fa-icon><span>{{activity.time | amDateFormat:'llll'}}</span><fa-icon [icon]="faTimes" class="point" style="margin:0px 8px;" (click)="deleteReminder(activity)"></fa-icon></div>
+                </div>
+                <div class="card-footer">
+                    <div class="space">
+                        <a  (click)="gotoModal(activity)" data-bs-toggle="modal" data-bs-target="#remindModal"><fa-icon [icon]="faStopwatch"></fa-icon></a>
+                        <a  (click)="gotoModal(activity)" data-bs-toggle="modal" data-bs-target="#Modal"><fa-icon [icon]="faPencilAlt"></fa-icon></a>
+                        <a  (click)="delete(activity.id)"><fa-icon [icon]="faTrash"></fa-icon></a>
+                    </div>
+                </div>   
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="Modal" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body">
+                <a data-bs-dismiss="modal" class="modalbtn"><fa-icon [icon]="faTimes"></fa-icon></a>
+                <input type="text" class="form-control m-2 inp1" id="title2" name="title" placeholder="Enter Title" [(ngModel)]="editactivityObj.title" autocomplete="off">
+                <input type="text" class="form-control m-2 inp1" id="activity2" name="activity" placeholder="Enter Activity" [(ngModel)]="editactivityObj.activity" autocomplete="off">
+            </div>
+            <div class="modal-footer">
+                <div class="show1 w-100">
+                    <a data-bs-toggle="modal" data-bs-target="#secondModal" data-bs-dismiss="modal"><fa-icon [icon]="faStopwatch"></fa-icon></a>
+                    <a (click)="save()" data-bs-dismiss="modal"><fa-icon [icon]="faSave"></fa-icon></a>
+                    <a (click)="delete(editactivityObj.id)" data-bs-dismiss="modal"><fa-icon [icon]="faTrash"></fa-icon></a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="remindModal" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body">
+                <a data-bs-dismiss="modal" class="modalbtn"><fa-icon [icon]="faTimes"></fa-icon></a>
+                <h5 style="padding-left: 10px;">Select date and time</h5>
+                <input type="datetime-local" class="form-control m-2 inp1" id="time" name="time" [(ngModel)]="editactivityObj.time">
+            </div>
+            <div class="modal-footer">
+                <div class="show1 w-100">
+                    <a (click)="setReminder()" data-bs-dismiss="modal">Set Reminder<fa-icon [icon]="faBell" style="margin-left: 8px;"></fa-icon></a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="secondModal" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body">
+                <a data-bs-dismiss="modal" class="modalbtn"><fa-icon [icon]="faTimes"></fa-icon></a>
+                <h5 style="padding-left: 10px;">Select date and time</h5>
+                <input type="datetime-local" class="form-control m-2 inp1" id="time" name="time" [(ngModel)]="editactivityObj.time">
+            </div>
+            <div class="modal-footer">
+                <div class="show1 w-100">
+                    <a (click)="setReminder()" data-bs-toggle="modal" data-bs-target="#Modal" data-bs-dismiss="modal">Set Reminder<fa-icon [icon]="faBell" style="margin-left: 8px;"></fa-icon></a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+</div> 
+ 

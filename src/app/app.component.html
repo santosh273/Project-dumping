@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><fa-icon [icon]="faClipboard" class="icon"></fa-icon><span class="brand">Store</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navid">
+      <fa-icon [icon]="faBars" class="toggleicon"></fa-icon>
+    </button>
+    <div class="collapse navbar-collapse" id="navid">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="forms" routerLinkActive="active"><fa-icon [icon]="faSignInAlt" style="margin: 0px 10px;"></fa-icon>Login</a>
+            </li>
+            <li class="nav-item" *ngIf="username">
+              <a class="nav-link" routerLink="dashboard" routerLinkActive="active"><fa-icon [icon]="faCalendarCheck" style="margin: 0px 10px;"></fa-icon>Notes</a>
+            </li>
+            <li class="nav-item" *ngIf="username">
+              <a class="nav-link" routerLink="remainders" routerLinkActive="active"><fa-icon [icon]="faBell" style="margin: 0px 10px;"></fa-icon>Remainders</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto" *ngIf="username">
+            <li class="nav-item dropdown">
+              <a class="nav-link userlink" id="dropdown" data-bs-toggle="dropdown">
+                <fa-icon [icon]="faUserCircle" class="usericon" style="margin: 0px 10px;"></fa-icon>{{username}}
+              </a>
+              <ul class="dropdown-menu">
+                <li><button class="dropdown-item btn" (click)="logout()">Log Out</button></li>
+              </ul>
+            </li>
+          </ul>
+
+          
+
+
+      </div>
+    </div>
+</nav>
+<router-outlet></router-outlet> 
+
+

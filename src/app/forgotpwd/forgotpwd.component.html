@@ -1,0 +1,31 @@
+<form [formGroup] = "forgotpwdForm" (ngSubmit)="onSubmit()">
+    <h4 class="text-center m-4">Reset Password</h4>
+    <div class="inp">
+        <span><fa-icon [icon]="faUserTie"></fa-icon></span>
+        <input type="text"  id="username" name="username" placeholder="Username" formControlName="username" autocomplete="off">
+        <span *ngIf="submitted || (gc().username.touched)">
+            <span *ngIf="gc().username.hasError('required')" class="text-danger err">Please enter username</span>
+        </span>
+    </div>
+    <div class="inp">
+        <span><fa-icon [icon]="faKey"></fa-icon></span>
+        <input type="password" id="password" name="password" placeholder="Password" formControlName="password">
+        <span *ngIf="submitted || gc().password.touched || gc().password.dirty">
+            <span *ngIf="gc().password.hasError('required')" class="text-danger err">Please enter password</span>
+            <span *ngIf="gc().password.hasError('minlength')" class="text-danger err">Atleast 4 characters</span>
+        </span>
+    </div>
+    <div class="inp">
+        <span><fa-icon [icon]="faKey"></fa-icon></span>
+        <input type="password" id="cpassword" name="cpassword" placeholder="Confirm Password" formControlName="cpassword">
+        <span *ngIf="submitted || gc().cpassword.touched || gc().cpassword.dirty">
+            <span *ngIf="gc().cpassword.hasError('required')" class="text-danger err">Please enter password</span>
+            <span *ngIf="gc().cpassword.hasError('minlength')" class="text-danger err">Atleast 4 characters</span>
+        </span>
+    </div>
+    <div class="button">
+        <button class="btn">Reset</button>
+    </div>
+</form>
+   
+

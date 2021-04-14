@@ -1,0 +1,49 @@
+.inp{
+    background-color: rgba(179, 172, 172, 0.212);
+    margin: 25px 20px;
+    padding: 10px;
+}
+
+input{
+    padding-left: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.button
+{
+    text-align: center;
+    margin: 40px 20px 20px 20px;
+}
+
+.btn{
+    color: white;
+    background-color: rgb(21, 182, 21);
+    width: 100%;
+    padding: 10px;
+    outline: none;
+}
+
+a{
+    cursor: pointer;
+    color: rgba(179, 172, 172);
+    text-align: center;
+}
+
+
+@media only screen and (min-width: 577px)
+{
+    .err
+    {
+        float: right;
+        display: inline;
+    }
+}
+
+@media only screen and (max-width: 576px)
+{
+    .err{
+        display: inline-block;
+    }
+}

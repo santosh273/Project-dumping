@@ -1,0 +1,88 @@
+.formbtn
+{
+    cursor: pointer;
+    background-color: white;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+}
+
+.formbtn fa-icon
+{
+    font-size: 30px;
+}
+.formbtn p
+{
+    text-align: center;
+    margin-bottom: 0px;
+}
+.active
+{
+    color: white;
+    background-color: rgb(21, 182, 21);
+}
+
+.formbtn:focus
+{
+    border: none;
+}
+
+@media only screen and (max-width: 992px)
+{
+    .sdiv1
+    {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 767px)
+{
+    .sdiv2
+    {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 50px;
+    }
+    .formbtn
+    {
+        width:33%
+    }
+    .sdiv3
+    {
+        height: 390px;
+        background-color: white;
+    }
+}
+
+@media only screen and (min-width: 768px)
+{
+    .sdiv3
+    {
+        height: 390px;
+        background-color: white;
+        margin-left: 50px;
+    }
+}
+    
+@media only screen and (max-width: 576px)
+{
+    .sdiv2
+    {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 50px;
+    }
+    .formbtn
+    {
+        width:33%
+    }
+    .sdiv3
+    {
+        height: 480px;
+        background-color: white;
+    }
+}

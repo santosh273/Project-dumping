@@ -1,0 +1,259 @@
+@media only screen and (max-width: 576px)
+{
+    .sbtn{
+        padding: 8px 8px;
+        color: white;
+        background-color: rgb(21, 182, 21);
+        outline: none;
+    }
+    .vanish
+    {
+        display: none;
+    }
+    .icon{
+        margin-left: 0px;
+    }
+    
+}
+@media only screen and (min-width: 577px)
+{
+    .sbtn{
+        color: white;
+        background-color: rgb(21, 182, 21);
+        padding: 8px 30px;
+        outline: none;
+    }
+    .icon
+    {
+        margin-left: 8px;
+    }
+}
+
+.space
+{
+    display: none;
+    padding: 0;
+}
+.card:hover .space{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 8px;
+}
+
+
+.show1{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.splbtn
+{
+    padding: 10px;
+    background-color: rgb(21, 182, 21);
+    color: White;
+    border-radius: 10px;
+    outline: none;
+}
+.splform
+{
+    padding: 20px 0px;
+    background-color: white;
+    display: none;
+}
+
+.inp{
+    background-color: rgba(179, 172, 172, 0.212);
+    margin: 25px 20px;
+    padding: 10px;
+}
+
+input{
+    padding-left: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.err
+{
+    float: right;
+}
+
+.card-footer
+{
+    background-color: white;
+    border: none;
+}
+
+.inp1
+{
+    width: 95%;
+}
+
+.modalbtn
+{
+    color: black;
+    float: right;
+    margin:0 0 7px 5px;
+}
+
+
+@media only screen and (max-width: 1200px)
+{
+    .searchbox:hover > .searchinp {
+        width: 150px;
+        padding: 0 6px;
+    }
+}
+
+@media only screen and (min-width: 992px)
+{
+    .searchbox
+    {
+        position: absolute;
+        padding: 10px;
+        color: white;
+        background-color: black;
+        right: 11px;
+        border-radius: 50px;
+        font-family: 'Knewave', cursive;
+    }
+
+    .searchicon
+    {
+        cursor: pointer;
+        float: right;
+        display: flex;
+        justify-content: center;
+        border-radius: 50px;
+        align-items: center;
+        transition: 0.4s;
+        font-size: 20px;
+        width: 35px;
+        height: 35px;
+    }
+
+
+
+    .searchinp
+    {
+        font-size: 19px;
+        border:none;
+        background: none;
+        outline:none;
+        float:left;
+        color: white;
+        transition: 0.4s;
+        height: 35px;
+        padding: 0;
+        width: 0;
+    }
+
+
+    .searchbox:hover > .searchinp {
+        width: 180px;
+        padding: 0 6px;
+    }
+
+    .searchbox:hover > .searchicon {
+        background-color: white;
+        color: black;
+    }
+}
+
+@media only screen and (max-width: 991px)
+{
+    .searchbox
+    {
+        position: initial;
+        padding: 10px;
+        color: white;
+        background-color: black;
+        border-radius: 50px;
+        height: 55px;
+        width: 75%;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    .searchicon
+    {
+        cursor: pointer;
+        float: right;
+        display: flex;
+        justify-content: center;
+        border-radius: 50px;
+        align-items: center;
+        transition: 0.4s;
+        font-size: 20px;
+        width: 35px;
+        height: 35px;
+        background-color: white;
+        color: black;
+        
+    }
+
+
+
+    .searchinp
+    {
+        font-size: 19px;
+        border:none;
+        background: none;
+        outline:none;
+        float:left;
+        color: white;
+        transition: 0.4s;
+        height: 35px;
+        padding: 0 6px;
+        width: 150px;
+        font-family: 'Knewave', cursive;
+    }
+
+
+}
+
+.displaycards
+{
+    display: flex;
+    justify-content: center;
+}
+
+.remindDisplay
+{
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 50px;
+    padding: 5px;
+    margin-top: 10px;
+    background-color: rgba(179, 172, 172, 0.212);
+}
+
+a
+{
+    cursor: pointer;
+}
+.point
+{
+    cursor: pointer;
+}
+
+.pinicon
+{
+    float: right;
+    display: none;
+    color: black;
+    margin:0 0 7px 5px;
+}
+
+.card:hover .pinicon
+{
+    display: block;
+}
+
+.sh
+{
+    color: white;
+    font-size: 22px;
+}
