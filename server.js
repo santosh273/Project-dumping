@@ -15,7 +15,7 @@ app.use("/user",userApiObj);
 app.use("/activity",activityApiObj);
 
 
-const dburl = "mongodb+srv://todop:todop@cluster0.kopsp.mongodb.net/notes?retryWrites=true&w=majority";
+const dburl = "mongodb+srv://project:project@cluster0.2o9tz.mongodb.net/Store?retryWrites=true&w=majority";
 
 mongoose.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true});
 const db = mongoose.connection;
@@ -33,5 +33,5 @@ app.use((err,req,res,next)=>{
 })
 
 
-const port = process.env.PORT||3000;
+const port = process.env.port||8080;
 app.listen(port,()=>console.log(`Server started on port ${port}`))
