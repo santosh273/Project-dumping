@@ -26,7 +26,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
-    "express": "^4.17.1",
+    "express": "^4.19.2",
     "express-async-handler": "^1.1.4",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.1",
